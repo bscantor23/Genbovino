@@ -1,0 +1,909 @@
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100vh;
+    width: 99%;
+    font-family: 'Roboto';
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+p {
+    line-height: 30px;
+}
+
+a {
+    color: #fff;
+    font-size:20px;
+    text-decoration: none;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 680px repeat(5, auto);
+    grid-template-areas:    
+        "home"
+        "infoHome"
+        "general"
+        "objectives"
+        "portfolio"
+        "contact-services";
+    width: 102%;
+}
+
+.principal-header {
+    display: grid;
+    height:70px;
+    width: 100%;
+    position: fixed;
+    grid-template-columns: 25% 75%;
+    grid-template-areas: "logo nav";
+    background-color: #14330be7;
+    -webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.logo-genovinos {
+    display: grid;
+    grid-area: logo;
+    justify-content: center;
+    align-content: center;
+}
+
+.icon-genovinos {
+    width:250px;
+    transition: 0.3s;
+}
+
+.icon-genovinos:hover{
+    width: 260px;
+    transition: 0.3s;
+}
+
+.nav {
+    grid-area:nav;
+    display: grid;
+    align-content: center;
+}
+
+.nav ul {
+    padding:0;
+    width:inherit;
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    justify-content: space-evenly;
+    align-content: center;
+    text-align: center;
+    list-style: none;
+}
+
+ul li a {
+    font-weight: bold;
+    font-size: 18px;
+    transition:0.3s;
+}
+
+ul li a:hover {
+    font-size: 20px;
+    transition:0.3s
+}
+
+.home-container {
+    width: 100%;
+    grid-area: home;
+    background-image: url("../img/portfolio/background-img.png");
+    background-size: cover;
+    -webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.home-component {
+    margin-top: 80px;
+    padding-top: 50px;
+    display: grid;
+    align-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 310px 25px 100px;
+    grid-gap: 10px;
+    grid-template-areas: 
+        "img-home"
+        "decorate-home"
+        "title-home"
+        "section-color";
+}
+
+.img-home-section {
+    grid-area: img-home;
+    display: grid;
+    justify-content: center;
+    transition: 1s;
+}
+
+.decoration-home-section {
+    grid-area: decorate-home;
+    display: grid;
+    justify-content: center;
+}
+
+.title-home-section {
+    grid-area: title-home;
+    display: grid;
+    justify-content: center;
+}
+
+.title-home-section > h1 {
+    color:#fff;
+    font-weight: bold;
+    font-size: 35px;
+    width: 600px;
+    margin:10px 0px 0px;
+    text-align: center;
+}
+
+
+.principal-img {
+    width: 300px;
+    transition: 0.3s;
+}
+
+.principal-img:hover{
+    width: 310px;
+    transition: 0.3s;
+}
+
+.principal-decorate {
+    width: 400px;
+}
+
+.homeInfo-container{
+    padding: 40px 40px 0px;
+    display: grid;
+    grid-area: infoHome;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 120px auto;
+    grid-template-areas: 
+            "title-info"
+            "paragraph-info"
+            "symbol-info";
+    
+    -webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.title-homeInfo-component{
+    grid-area: title-info;
+    display: grid;
+    justify-content: center;
+}
+
+.title-homeInfo-component h1 {
+    text-align: center;
+    font-size: 35px;
+    margin:0;
+}
+
+.title-homeInfo-component > hr {
+    width: 800px;
+    height: 0%;
+    border: 5px solid #205312;
+    border-radius: 15px;
+}
+
+.paragraph-homeInfo-component {
+    grid-area: paragraph-info;
+    display: grid; 
+    justify-content: center;
+}
+
+.paragraph-homeInfo-component p {
+    display: grid;   
+    justify-content: center;
+    text-align: center;
+    width: 800px;
+}
+
+.symbol-homeInfo-component {
+    grid-area: symbol-info;
+    padding-bottom: 20px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    transition: 0.5s;
+}
+
+.symbol-img {
+    width: 40px;
+}
+
+.general-container {
+    padding-top: 25px;
+    grid-area: general;
+    background-color: #205312;
+    display:grid;
+    justify-content: center;
+    grid-template-columns: 350px 300px 350px;
+    grid-template-rows:100px 400px auto;
+    grid-template-areas: 
+        "title-gen  title-gen   title-gen"
+        "mission    img-gen     vision"
+        "symbol-gen symbol-gen  symbol-gen";
+    grid-gap:10px;
+    -webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+
+}
+
+.title-general-component {
+    grid-area: title-gen;
+    display: grid;
+    justify-content: center;
+}
+
+.title-general-component h1{
+    color:#fff;
+    font-weight: bold;
+    text-align: center;
+    display: grid;
+    font-size: 35px;
+    align-content: center;
+}
+
+.title-general-component > hr {
+    width: 1000px;
+    height: 0%;
+    border: 5px solid #fff;
+    border-radius: 15px;
+}
+
+.mission-component {
+    grid-area: mission;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 45px 200px;
+    grid-template-areas: 
+        "mission-title"
+        "mission-icon"
+        "mission-decoration"
+        "mission-paragraph";
+    grid-gap: 10px;
+}
+
+.subtitle-mission-section {
+    grid-area: mission-title;
+    display: grid;
+    justify-content: center;
+}
+
+.subtitle-mission-section h2{
+    color: #fff;
+    font-weight: bold;
+    display: grid;
+    align-content: center;
+}
+
+.icon-mission-section {
+    grid-area: mission-icon;
+    display: grid;
+    justify-content: center;
+}
+
+.icon-asset {
+    width: 80px;
+    transition: 0.3s;
+}
+
+.icon-asset:hover {
+    width:90px;
+    transition: 0.3s;
+}
+
+.mission-component > .decoration-gen-section {
+    margin-top: 10px;
+    grid-area: mission-decoration;
+    display: grid;
+    justify-content: center;
+}
+
+.gen-decorate {
+    width:300px;
+}
+
+.paragraph-mission-section{
+    grid-area: mission-paragraph;
+    display: grid;
+    justify-content: center;
+}
+
+.paragraph-mission-section p {
+    color: #fff;
+    text-align: center;
+    width: 300px;
+}
+
+.img-general-component{
+    grid-area:img-gen;
+    display: grid;
+    justify-content: center;
+}
+
+.vision-component {
+    grid-area: vision;
+    display: grid;
+    padding-left: 30px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 45px 200px;
+    grid-template-areas: 
+        "vision-title"
+        "vision-icon"
+        "vision-decoration"
+        "vision-paragraph";
+    grid-gap: 10px;
+}
+
+.subtitle-vision-section {
+    grid-area: vision-title;
+    display: grid;
+    justify-content: center;
+}
+
+.subtitle-vision-section h2{
+    color: #fff;
+    font-weight: bold;
+    display: grid;
+    align-content: center;
+}
+
+.icon-vision-section {
+    grid-area: vision-icon;
+    display: grid;
+    justify-content: center;
+}
+
+.vision-component > .decoration-gen-section {
+    margin-top: 10px;
+    grid-area: vision-decoration;
+    display: grid;
+    justify-content: center;
+}
+
+.paragraph-vision-section{
+    grid-area: vision-paragraph;
+    display: grid;
+    justify-content: center;
+}
+
+.paragraph-vision-section p {
+    color: #fff;
+    text-align: center;
+    width: 330px;
+}
+
+.symbol-general-component{
+    grid-area:symbol-gen;
+    padding-bottom: 20px;
+    display: grid;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.objectives-container{
+    padding: 60px 40px 0px;
+    display: grid;
+    grid-area: objectives;
+    grid-gap: 40px;
+    justify-content: center;
+    grid-template-columns: repeat(2,500px);
+    grid-template-rows: repeat(2,auto) 300px auto ;
+    grid-template-areas: 
+            "title-obj      title-obj"
+            "subtitle-obj   subtitle-obj"
+            "info-obj       img-obj"
+            "symbol-obj     symbol-obj";
+    
+    -webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+
+.title-objectives-component{
+    grid-area: title-obj;
+    display: grid;
+    justify-content: center;
+}
+
+.title-objectives-component h1{
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.title-objectives-component > hr{
+    width: 1000px;
+    height: 0px;
+    border: 5px solid #205312;
+    border-radius: 15px;
+}
+
+.subtitle-objectives-component{
+    grid-area: subtitle-obj;
+    display: grid;
+    justify-content: center;
+}
+
+.info-objectives-component{
+    grid-area: info-obj;
+    display: grid;
+    grid-gap:20px;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3,auto);
+    grid-template-areas: 
+        "icon-obj"
+        "paragraph-obj-1"
+        "paragraph-obj-2";
+    justify-content: center;
+}
+
+.icon-objectives-section {
+    grid-area: icon-obj;
+    display: grid;
+    justify-content: center;
+}
+
+.paragraph-objective-section-1 {
+    grid-area: paragraph-obj-1;
+    display: grid;
+    justify-content: center;
+}
+
+.paragraph-objective-section-2 {
+    grid-area: paragraph-obj-2;
+    display: grid;
+    justify-content: center;
+}
+
+.paragraph-objective-section-1 p, .paragraph-objective-section-2 p {
+    width: 400px;
+    padding-left: 30px;
+    text-align: justify;
+    border-left: 6px solid #205312;
+    border-radius: 12px;
+}
+
+.img-objectives-component{
+    grid-area: img-obj;
+    display: grid;
+    justify-content: center;
+}
+
+.img-objectives-component img {
+    width:450px;
+    border: 10px solid #205312;
+    border-radius: 20px;
+    transition:0.3s;
+}
+
+.img-objectives-component img:hover {
+    width:460px;
+    transition:0.3s;
+}
+
+.symbol-objectives-component{
+    grid-area: symbol-obj;
+    padding-bottom: 20px;
+    display: grid;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.portfolio-container{
+    padding: 40px 40px 0px;
+    display: grid;
+    grid-area: portfolio;
+    grid-gap: 40px;
+    justify-content: center;
+    background-color: #205312;
+    grid-template-columns: repeat(3,280px);
+    grid-template-rows: auto repeat(2,180px) auto;
+    grid-template-areas: 
+            "title-port     title-port      title-port"
+            "item-port-1    item-port-2     item-port-3"
+            "item-port-4    item-port-5     item-port-6"
+            "symbol-port    symbol-port     symbol-port";
+    
+    -webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.title-portfolio-component {
+    grid-area: title-port;
+    display: grid;
+    justify-content: center;
+}
+
+.title-portfolio-component h1 {
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    font-size: 35px;
+    color: #fff;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.title-portfolio-component > hr {
+    width: 1000px;
+    height: 0px;
+    border: 5px solid #fff;
+    border-radius: 15px;
+}
+
+.img-portfolio {
+    width: 280px;
+    height: 180px;
+    border: 5px solid #fff;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.img-portfolio:hover {
+    width: 290px;
+    height: 190px;
+    transition: 0.3s;
+}
+
+#item-1{
+    grid-area: item-port-1;
+    display: grid;
+    justify-content: center;
+}
+
+#item-2{
+    grid-area: item-port-2;
+    display: grid;
+    justify-content: center;
+}
+
+#item-3{
+    grid-area: item-port-3;
+    display: grid;
+    justify-content: center;
+}
+
+#item-4{
+    grid-area: item-port-4;
+    display: grid;
+    justify-content: center;
+}
+
+#item-5{
+    grid-area: item-port-5;
+    display: grid;
+    justify-content: center;
+}
+
+#item-6{
+    grid-area: item-port-6;
+    display: grid;
+    justify-content: center;
+}
+
+.symbol-portfolio-component{
+    padding-bottom: 20px;
+    grid-area: symbol-port;
+    display: grid;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.contact-services-container {
+    display: grid;
+    grid-area: contact-services;
+    justify-content: center;
+    grid-template-columns: 0.4fr 0.6fr;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+            "contact     services";
+    -webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.contact-component {
+    padding-top: 20px;
+    grid-area:contact;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows:  auto 200px auto;
+    grid-template-areas: 
+        "contact-title"
+        "contact-info"
+        "contact-site";
+    grid-gap: 10px;
+    justify-content: center;
+    -webkit-box-shadow: 5px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.title-contact-section {
+    grid-area:contact-title;
+    display: grid;
+    justify-content: center;
+}
+
+.title-contact-section h1, .title-services-section h1 {
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.title-contact-section > hr, .title-services-section > hr {
+    width: 380px;
+    height: 0px;
+    border: 5px solid #205312;
+    border-radius: 15px;
+}
+
+.info-contact-section {
+    grid-area:contact-info;
+    display: grid;
+    grid-gap: 15px;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3,auto);
+    grid-template-areas: 
+        "email"
+        "phone"
+        "map";
+    border-bottom: 1px solid rgba(238, 238, 238, 0.863);
+}
+
+.icon-email .icon-asset, .icon-phone .icon-asset, .icon-address .icon-asset {
+    width: 50px;
+    transition: 0.3s;
+}
+
+.icon-email .icon-asset:hover, .icon-phone .icon-asset:hover, .icon-address .icon-asset:hover {
+    transition: 0.3s;
+    width: 60px;
+}
+
+.email-contact-item {
+    grid-area:email;
+    display: grid;
+    align-content: center;
+    grid-gap:20px;
+    grid-template-rows: auto;
+    grid-template-columns: 0.2fr auto;
+    grid-template-areas: "icon-email info-email";
+}
+
+.icon-email  {
+    grid-area: icon-email;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+.info-email {
+    grid-area: info-email;
+    display: grid;
+    align-content: center;
+}
+
+.info-email h4,.info-phone h4,.info-address h4 {
+    color: #14330b;
+    transition: 0.3s;
+}
+
+.info-email h4:hover,.info-phone h4:hover,.info-address h4:hover{
+    color: #205312;
+    transition: 0.3s;
+    font-size:20px;
+    cursor: pointer;
+}
+
+.phone-contact-item {
+    grid-area:phone;
+    display: grid;
+    grid-gap:20px;
+    align-content: center;
+    grid-template-rows: auto;
+    grid-template-columns: 0.2fr auto;
+    grid-template-areas: "icon-phone info-phone";
+}
+
+.icon-phone  {
+    grid-area: icon-phone;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+.info-phone {
+    grid-area: info-phone;
+    display: grid;
+    align-content: center;
+}
+
+.address-contact-item {
+    grid-area:map;
+    display: grid;
+    align-content: center;
+    grid-gap: 20px;
+    grid-template-rows: auto;
+    grid-template-columns: 0.2fr 300px;
+    grid-template-areas: "icon-address info-address";
+}
+
+.icon-address {
+    grid-area: icon-address;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+.info-address {
+    grid-area: info-address;
+    display: grid;
+    align-content: center;
+}
+
+.site-map-section {
+    grid-gap: contact-site;
+    display: grid;
+    border-radius: 15px;
+    border: 5px solid #205312;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.site-map-section iframe {
+    border: 5px solid #205312;
+    border-radius: 15px;
+    height:auto;
+}
+
+.img-map {
+    width: 100%;
+}
+
+.symbol-general-component:hover, 
+.symbol-homeInfo-component:hover, 
+.symbol-objectives-component:hover,
+.symbol-portfolio-component:hover {
+    margin-bottom:20px;
+    transition: 0.5s;
+} 
+
+.services-component {
+    padding-top: 20px;
+    grid-area:services;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 60px 60px 250px auto;
+    grid-template-areas: 
+        "services-title     services-title"
+        "services-connect   services-connect"
+        "services-info      services-img"
+        "services-decorate  services-decorate";
+    grid-gap: 30px;
+    justify-content: center;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.title-services-section{
+    grid-area: services-title;
+    display: grid;
+    justify-content: center;
+}
+
+.button-connection-section{
+    padding-bottom: 15px;
+    grid-area: services-connect;
+    display: grid;
+    border-bottom: 1px solid rgba(238, 238, 238, 0.863);
+    justify-content: center;
+}
+
+.button-connection {
+    color: #fff;
+    padding: 0px 70px;
+    background-color: #205312;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.button-connection:hover {
+    color: #205312;
+    padding: 6px 50px;
+    font-size: 22px;
+    background-color: #fff;
+    border: 5px solid #205312;
+    transition: 0.3s;
+}
+
+.text-services-section {
+    grid-area: services-info;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.text-services-section ul{
+    display: grid;
+    grid-template-rows: repeat(5,auto);
+    grid-gap: 25px;
+    font-weight: bold;
+}
+
+.img-services-section {
+    grid-area: services-img;
+    display: grid;
+    justify-content: center;
+}
+
+.footer-component {
+    background-color: #14330b;
+    display: grid;
+    grid-gap: 2px;
+    padding: 5px;
+    width: 101.3%;
+    justify-content: center;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2,auto);
+    grid-template-areas: 
+        "genovinos"
+        "copyright";
+}
+
+.genovinos-section {
+    grid-area: genovinos;
+    display: grid;
+    justify-content: center;
+}
+
+.genovinos-section img {
+    width:130px;
+}
+
+.copyright-section {
+    grid-area: copyright;
+    display: grid;
+    justify-content: center;
+}
+
+.copyright-section  p {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+
+
+
+
